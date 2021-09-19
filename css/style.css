@@ -6,6 +6,7 @@
 :root {
   --main-color: hsl(226, 43%, 10%);
   --dark-blue: hsl(235, 46%, 20%);
+  --dark-blue-hover: hsl(235, 46%, 30%);
   --desaturated-blue: hsl(235, 45%, 61%);
   --pale-blue: hsl(236, 100%, 87%);
   --profile: hsl(246, 80%, 60%);
@@ -45,8 +46,15 @@ body {
   display: grid;
 }
 
-.grid--2x1 {
+.container.grid {
   grid-template: 200px 1fr / 1fr;
+  grid-auto-flow: column;
+  row-gap: 25px;
+}
+
+.result-widgets {
+  display: grid;
+  grid-template: repeat(6, 160px) / 1fr;
   grid-auto-flow: column;
   row-gap: 25px;
 }
@@ -78,9 +86,9 @@ main {
 .profile__content {
   align-items: center;
   background-color: var(--profile);
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: 1fr 2fr;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 25px;
   height: 130px;
   border-radius: 15px;
 }
@@ -111,12 +119,13 @@ main {
   color: var(--desaturated-blue);
 }
 
-/* ---- Result widgets ---- */
-.result-widgets {
-  display: grid;
-  grid-template: repeat(6, 160px) / 1fr;
-  grid-auto-flow: column;
-  row-gap: 25px;
+.profile__period span {
+  transition: color .3s; 
+}
+
+.profile__period span:hover {
+  color: white;
+  cursor: pointer;
 }
 
 /* ---- Widget ---- */
@@ -127,41 +136,39 @@ main {
 }
 
 .widget__content {
+  background-color: var(--dark-blue);
   border-radius: 15px;
+  height: 120px;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center; */
+  padding: 25px;
+  transition: background-color 0.3s;
 }
 
-.widget__content {
-  background-color: var(--dark-blue);
-  height: 120px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-content: center;
-  padding: 25px;
+.widget__content:hover {
+  background-color: var(--dark-blue-hover);
 }
 
 .widget__content p {
-  margin: .8rem 0;
+  margin: 0.8rem 0;
 }
 
-.widget__result {
-  justify-self: left;
-}
-
-.widget__rest {
-  justify-self: right;
-  align-self: center;
-}
-
-.widget__rest img {
+.widget__first-line,
+.widget__second-line {
   display: flex;
-  margin: 10px 0 24px auto;
-  opacity: 0.6;
-  transition: opacity .3s;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.widget__rest img:hover {
+.widget__first-line img {
+  border: 4px solid transparent;
+  opacity: 0.4;
+  transition: opacity .2s;
+}
+
+.widget__first-line img:hover {
   opacity: 1;
-  transition: opacity .3s;
   cursor: pointer;
 }
 
@@ -215,4 +222,98 @@ main {
 .self-care {
   background: url('../images/icon-self-care.svg') 95% -10% no-repeat;
   background-color: var(--self-care);
+}
+
+/* ---- @media queries ---- */
+
+@media only screen and (min-width: 725px) {
+  .container {
+    width: 675px;
+  }
+
+  .result-widgets {
+    grid-template: repeat(3, 160px) / 1fr 1fr;
+    grid-auto-flow: row;
+    column-gap: 25px;
+  }
+
+  .profile__content {
+    padding-left: 50px;
+  }
+}
+
+@media only screen and (min-width: 1110px) {
+  main {
+    height: 98vh;
+    padding-top: 200px;
+  padding-bottom: 200px;
+  }
+
+  .container.grid {
+    width: 1110px;
+    grid-template: 1fr / 1fr 3fr;
+    grid-auto-flow: row;
+    column-gap: 25px;
+  }
+
+  .profile__content {
+    align-items: flex-start;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    padding: 30px;
+    height: 355px;
+    border-radius: 15px;
+  }
+
+  #avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    margin-bottom: 40px;
+  }
+
+  .profile__name {
+    font-size: 4rem;
+  }
+
+  .profile__period {
+    grid-template: repeat(3, 1fr) / 1fr;
+    grid-auto-flow: column;
+    height: 160px;
+    justify-items: start;
+    align-content: start;
+    padding: 30px;
+  }
+
+  .profile__period span {
+    margin-bottom: 20px;
+  }
+  
+  .result-widgets {
+    grid-template: repeat(2, 245px) / repeat(3, 1fr);
+  }
+
+  .widget {
+    padding-top: 45px;
+    height: 245px;
+    width: 255px;
+  }
+  
+  .widget__content {
+    height: 200px;
+  }
+
+  .widget__second-line {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .widget__current {
+    font-size: 6rem;
+    margin: 0;
+  }
+
+  .widget__previous {
+    margin: 0;
+  }
 }
