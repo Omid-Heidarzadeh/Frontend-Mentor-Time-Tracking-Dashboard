@@ -15,6 +15,7 @@
     .attribution {
       font-size: 11px;
       text-align: center;
+      color: #000;
     }
 
     .attribution a {
@@ -26,7 +27,6 @@
 
 <body>
   <main>
-
     <div class="container grid">
       <!-- Begin Profile Widget -->
       <section class="profile">
@@ -38,13 +38,13 @@
           </span>
         </div>
         <div class="profile__period">
-          <span>
+          <span data-period="daily" class="active">
             Daily
           </span>
-          <span class="active">
+          <span data-period="weekly">
             Weekly
           </span>
-          <span>
+          <span data-period="monthly">
             Monthly
           </span>
         </div>
@@ -60,8 +60,8 @@
               <img src="images/icon-ellipsis.svg" alt="more options">
             </span>
             <span class="widget__second-line">
-              <p class="widget__current" id="currentWork">5hrs</p>
-              <p class="widget__previous">Last Week - <span id="lastWork"></span></p>
+              <p class="widget__current" id="currentWork">--</p>
+              <p class="widget__previous">Last <span id="previousWork"></span></p>
             </span>
           </div>
         </section>
@@ -74,8 +74,8 @@
               <img src="images/icon-ellipsis.svg" alt="more options">
             </span>
             <span class="widget__second-line">
-              <p class="widget__current" id="currentPlay">5hrs</p>
-              <p class="widget__previous">Last Week - <span id="lastPlay"></span></p>
+              <p class="widget__current" id="currentPlay">--</p>
+              <p class="widget__previous">Last <span id="previousPlay"></span></p>
             </span>
           </div>
         </section>
@@ -88,8 +88,8 @@
               <img src="images/icon-ellipsis.svg" alt="more options">
             </span>
             <span class="widget__second-line">
-              <p class="widget__current" id="currentStudy">5hrs</p>
-              <p class="widget__previous">Last Week - <span id="lastStudy"></span></p>
+              <p class="widget__current" id="currentStudy">--</p>
+              <p class="widget__previous">Last <span id="previousStudy"></span></p>
             </span>
           </div>
         </section>
@@ -102,8 +102,8 @@
               <img src="images/icon-ellipsis.svg" alt="more options">
             </span>
             <span class="widget__second-line">
-              <p class="widget__current" id="currentExercise">5hrs</p>
-              <p class="widget__previous">Last Week - <span id="lastExercise"></span></p>
+              <p class="widget__current" id="currentExercise">--</p>
+              <p class="widget__previous">Last <span id="previousExercise"></span></p>
             </span>
           </div>
         </section>
@@ -116,8 +116,8 @@
               <img src="images/icon-ellipsis.svg" alt="more options">
             </span>
             <span class="widget__second-line">
-              <p class="widget__current" id="currentSocial">5hrs</p>
-              <p class="widget__previous">Last Week - <span id="lastSocial"></span></p>
+              <p class="widget__current" id="currentSocial">--</p>
+              <p class="widget__previous">Last <span id="previousSocial"></span></p>
             </span>
           </div>
         </section>
@@ -130,8 +130,8 @@
               <img src="images/icon-ellipsis.svg" alt="more options">
             </span>
             <span class="widget__second-line">
-              <p class="widget__current" id="currentSelfCare">5hrs</p>
-              <p class="widget__previous">Last Week - <span id="lastSelfCare"></span></p>
+              <p class="widget__current" id="currentSelfCare">--</p>
+              <p class="widget__previous">Last <span id="previousSelfCare"></span></p>
             </span>
           </div>
         </section>
@@ -142,11 +142,11 @@
     <!-- End of container -->
     </main>
     
-
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Omid Heidarzadeh</a>.
+    Coded by <a href="https://github.com/Omid-Heidarzadeh">Omid Heidarzadeh</a>.
   </div>
+  <script type="module" src="scripts/script.js"></script>
 </body>
 
 </html>

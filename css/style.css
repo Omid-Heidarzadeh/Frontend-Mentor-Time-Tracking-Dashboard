@@ -31,6 +31,7 @@ html {
 body {
   font-size: 1.8rem;
   font-family: 'rubik';
+  font-weight: 400;
   margin: 0;
   color: #fff;
 }
@@ -38,6 +39,7 @@ body {
 /* ------ Common Styles ------ */
 
 .container {
+  display: inline;
   width: 325px;
   margin: 0 auto;
 }
@@ -65,9 +67,14 @@ main {
   background-color: var(--main-color);
   padding-top: 75px;
   padding-bottom: 75px;
+  min-height: calc(100vh - 15px);
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 /* ---- Profile Widget ---- */
+
 .profile {
   background-color: var(--dark-blue);
   border-radius: 15px;
@@ -129,6 +136,7 @@ main {
 }
 
 /* ---- Widget ---- */
+
 .widget {
   padding-top: 40px;
   height: 160px;
@@ -139,9 +147,6 @@ main {
   background-color: var(--dark-blue);
   border-radius: 15px;
   height: 120px;
-  /* display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-content: center; */
   padding: 25px;
   transition: background-color 0.3s;
 }
@@ -189,39 +194,39 @@ main {
 }
 
 /* ---- widget work ---- */
+
 .work {
-  background: url('../images/icon-work.svg') 95% -10% no-repeat;
-  background-color: var(--work);
+  background: url('../images/icon-work.svg') 95% -10% no-repeat var(--work);
 }
 
 /* ---- widget play ---- */
+
 .play {
-  background: url('../images/icon-play.svg') 95% -5% no-repeat;
-  background-color: var(--play);
+  background: url('../images/icon-play.svg') 95% -5% no-repeat var(--play);
 }
 
 /* ---- widget study ---- */
+
 .study {
-  background: url('../images/icon-study.svg') 95% -5% no-repeat;
-  background-color: var(--study);
+  background: url('../images/icon-study.svg') 95% -5% no-repeat var(--study);
 }
 
 /* ---- widget exercise ---- */
+
 .exercise {
-  background: url('../images/icon-exercise.svg') 95% -0% no-repeat;
-  background-color: var(--exercise);
+  background: url('../images/icon-exercise.svg') 95% -0% no-repeat var(--exercise);
 }
 
 /* ---- widget social ---- */
+
 .social {
-  background: url('../images/icon-social.svg') 95% -20% no-repeat;
-  background-color: var(--social);
+  background: url('../images/icon-social.svg') 95% -20% no-repeat var(--social);
 }
 
 /* ---- widget self-care ---- */
+
 .self-care {
-  background: url('../images/icon-self-care.svg') 95% -10% no-repeat;
-  background-color: var(--self-care);
+  background: url('../images/icon-self-care.svg') 95% -10% no-repeat var(--self-care);
 }
 
 /* ---- @media queries ---- */
@@ -242,18 +247,14 @@ main {
   }
 }
 
-@media only screen and (min-width: 1110px) {
-  main {
-    height: 98vh;
-    padding-top: 200px;
-  padding-bottom: 200px;
-  }
-
+@media only screen and (min-width: 1140px) {
   .container.grid {
     width: 1110px;
     grid-template: 1fr / 1fr 3fr;
     grid-auto-flow: row;
     column-gap: 25px;
+    max-height: 515px;
+    align-self: center;
   }
 
   .profile__content {
@@ -273,7 +274,7 @@ main {
   }
 
   .profile__name {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 
   .profile__period {
@@ -309,7 +310,7 @@ main {
   }
 
   .widget__current {
-    font-size: 6rem;
+    font-size: 5rem;
     margin: 0;
   }
 
