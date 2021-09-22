@@ -2,11 +2,11 @@ import getTrackingData from './AjaxRequest.js';
 
 let trackingData = '';
 let url = 'assets/json/data.json';
-let priods = document.querySelector('.profile__period');
-for (let child of priods.children)
-  child.addEventListener('click', priodSelectHandler);
+let periods = document.querySelector('.profile__period');
+for (let child of periods.children)
+  child.addEventListener('click', periodSelectHandler);
 
-async function priodSelectHandler(e) {
+async function periodSelectHandler(e) {
   await getTrackingData(url).then((res) => (trackingData = res));
 
   if (!trackingData)
