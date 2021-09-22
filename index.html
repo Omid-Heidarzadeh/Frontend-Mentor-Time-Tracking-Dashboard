@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
+  <meta name="description" content="Solution for Frontend Mentor 'Time-Tracking Dashboard' challenge">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
@@ -22,127 +23,124 @@
       color: hsl(228, 45%, 44%);
     }
   </style>
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   <main>
-    <h1>Time Tracking Dashboard</h1>
+    <h1 class="hidden">Time Tracking Dashboard</h1>
     <div class="container grid">
       <!-- Begin Profile Widget -->
-      <div class="profile">
-        <div class="profile__content">
-          <img id="avatar" src="images/image-jeremy.png" alt="profile avatar">
-          <span>
+      <section class="profile">
+        <h2 class="hidden">Profile</h2>
+        <header tabindex="0" class="profile__content">
+          <img id="avatar" src="images/image-jeremy.png" alt="avatar">
+          <p>
             <span class="profile__title">Report for</span>
             <span class="profile__name">Jeremy Robson</span>
-          </span>
-        </div>
-        <div class="profile__period">
-          <span data-period="daily" class="active">
+          </p>
+        </header>
+        <section tabindex="0" class="profile__period">
+          <h3 class="hidden">Timeframes</h3>
+          <span tabindex="0" class="active period" data-period="daily">
             Daily
           </span>
-          <span data-period="weekly">
+          <span tabindex="0" class="period" data-period="weekly">
             Weekly
           </span>
-          <span data-period="monthly">
+          <span tabindex="0" class="period" data-period="monthly">
             Monthly
           </span>
-        </div>
-      </div>
+        </section>
+      </section>
       <!-- End of Profile Widget -->
-      
+
       <div class="result-widgets">
         <!-- Begin of Work Widget -->
         <div class="widget work">
-          <div class="widget__content">
-            <span class="widget__first-line">
-              <span class="widget__title">Work</span>
-              <img src="images/icon-ellipsis.svg" alt="more options">
-            </span>
-            <span class="widget__second-line">
+          <section class="widget__content">
+            <h2 tabindex="0" class="widget__title">Work</h2>
+            <img class="ellipsis" src="images/icon-ellipsis.svg" alt="">
+            <p tabindex="0" class="widget__second-line">
+              <span class="hidden">current</span>
               <span class="widget__current" id="currentWork">--</span>
-              <span class="widget__previous">Last <span id="previousWork"></span></span>
-            </span>
-          </div>
+              <span id="previousWork" class="widget__previous"></span>
+            </p>
+          </section>
         </div>
         <!-- End of Work WIdget -->
         <!-- Begin of Play Widget -->
         <div class="widget play">
-          <div class="widget__content">
-            <span class="widget__first-line">
-              <span class="widget__title">Play</span>
-              <img src="images/icon-ellipsis.svg" alt="more options">
-            </span>
-            <span class="widget__second-line">
+          <section class="widget__content">
+            <h2 tabindex="0" class="widget__title">Play</h2>
+            <img class="ellipsis" src="images/icon-ellipsis.svg" alt="">
+            <p tabindex="0" class="widget__second-line">
+              <span class="hidden">current</span>
               <span class="widget__current" id="currentPlay">--</span>
-              <span class="widget__previous">Last <span id="previousPlay"></span></span>
-            </span>
-          </div>
+              <span id="previousPlay" class="widget__previous"></span>
+            </p>
+          </section>
         </div>
         <!-- End of Play WIdget -->
         <!-- Begin of Study Widget -->
         <div class="widget study">
-          <div class="widget__content">
-            <span class="widget__first-line">
-              <span class="widget__title">Study</span>
-              <img src="images/icon-ellipsis.svg" alt="more options">
-            </span>
-            <span class="widget__second-line">
+          <section class="widget__content">
+            <h2 tabindex="0" class="widget__title">Study</h2>
+            <img class="ellipsis" src="images/icon-ellipsis.svg" alt="">
+            <p tabindex="0" class="widget__second-line">
+              <span class="hidden">current</span>
               <span class="widget__current" id="currentStudy">--</span>
-              <span class="widget__previous">Last <span id="previousStudy"></span></span>
-            </span>
-          </div>
+              <span id="previousStudy" class="widget__previous"></span>
+            </p>
+          </section>
         </div>
         <!-- End of Study WIdget -->
         <!-- Begin of Exercise Widget -->
         <div class="widget exercise">
-          <div class="widget__content">
-            <span class="widget__first-line">
-              <span class="widget__title">Exercise</span>
-              <img src="images/icon-ellipsis.svg" alt="more options">
-            </span>
-            <span class="widget__second-line">
+          <section class="widget__content">
+            <h2 tabindex="0" class="widget__title">Exercise</h2>
+            <img class="ellipsis" src="images/icon-ellipsis.svg" alt="">
+            <p tabindex="0" class="widget__second-line">
+              <span class="hidden">current</span>
               <span class="widget__current" id="currentExercise">--</span>
-              <span class="widget__previous">Last <span id="previousExercise"></span></span>
-            </span>
-          </div>
+              <span id="previousExercise" class="widget__previous"></span>
+            </p>
+          </section>
         </div>
         <!-- End of Exercise WIdget -->
         <!-- Begin of Social Widget -->
         <div class="widget social">
-          <div class="widget__content">
-            <span class="widget__first-line">
-              <span class="widget__title">Social</span>
-              <img src="images/icon-ellipsis.svg" alt="more options">
-            </span>
-            <span class="widget__second-line">
+          <section class="widget__content">
+            <h2 tabindex="0" class="widget__title">Social</h2>
+            <img class="ellipsis" src="images/icon-ellipsis.svg" alt="">
+            <p tabindex="0" class="widget__second-line">
+              <span class="hidden">current</span>
               <span class="widget__current" id="currentSocial">--</span>
-              <span class="widget__previous">Last <span id="previousSocial"></span></span>
-            </span>
-          </div>
+              <span id="previousSocial" class="widget__previous"></span>
+            </p>
+          </section>
         </div>
         <!-- End of Social WIdget -->
         <!-- Begin of Self-care Widget -->
         <div class="widget self-care">
-          <div class="widget__content">
-            <span class="widget__first-line">
-              <span class="widget__title">Self care</span>
-              <img src="images/icon-ellipsis.svg" alt="more options">
-            </span>
-            <span class="widget__second-line">
+          <section class="widget__content">
+            <h2 tabindex="0" class="widget__title">Self care</h2>
+            <img class="ellipsis" src="images/icon-ellipsis.svg" alt="">
+            <p tabindex="0" class="widget__second-line">
+              <span class="hidden">current</span>
               <span class="widget__current" id="currentSelfCare">--</span>
-              <span class="widget__previous">Last <span id="previousSelfCare"></span></span>
-            </span>
-          </div>
+              <span id="previousSelfCare" class="widget__previous"></span>
+            </p>
+          </section>
         </div>
         <!-- End of Self-care WIdget -->
       </div>
       <!-- End of result-widgets -->
     </div>
     <!-- End of container -->
-    </main>
-    
+  </main>
+
   <footer>
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
