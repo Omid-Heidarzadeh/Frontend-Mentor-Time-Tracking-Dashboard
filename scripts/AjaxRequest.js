@@ -14,9 +14,9 @@ async function ajax(url) {
 }
 
 export default function getTrackingData(url) {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     ajax(url).then((res) => {
       resolve(JSON.parse(res));
-    }, rej => console.log(`reject: ${rej}`));
-  })
+    });
+  });
 }
